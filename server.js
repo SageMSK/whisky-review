@@ -10,12 +10,12 @@ require('dotenv').config({ path: 'variables.env' });
     cd C:\Program Files\MongoDB\Server\3.2\bin
     mongod.exe --dbpath C:\Users\minsookim\Desktop\whisky-review\data
 */
-mongoose.Promise = global.Promise; // Use Native ES6 Promises
 mongoose.connect(process.env.DATABASE);
-mongoose.connect.on('error', (err) => {
+mongoose.Promise = global.Promise; // Use Native ES6 Promises
+mongoose.connection.on('error', (err) => {
   console.log(`Found Error: ${err.message}`);
 });
-mongoose.connect.once('open', () => {
+mongoose.connection.once('open', () => {
   console.log('Connected to mLab Database server!');
 });
 // MongoDB/Mongoose Schema Singletons

@@ -19,22 +19,25 @@ const reviewSchema = new mongoose.Schema({
   },
   nose: {
     type: String,
-    trim: true
+    trim: true,
+    required: 'Please provide the aroma.'
   },
   taste: {
     type: String,
-    trim: true
+    trim: true,
+    required: 'Please provide the taste.'
   },
   finish: {
     type: String,
-    trim: true
+    trim: true,
+    required: 'Please provide the finish.'
   }
 });
 
 /*
   Slugs are for link names. Must be a unique link
 */
-reviewSchema.pre('save' async function (next) {
+reviewSchema.pre('save', async function (next) {
   if (!this.isModified('name')) {
     return next();
   }

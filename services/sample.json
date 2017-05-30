@@ -1,0 +1,40 @@
+/*
+  For Development. This just holds some random JSON data for 
+  fast copy and paste for Postman
+*/
+
+{
+  "name": "Glen Garioch Sherry Cask 15",
+  "rating": 8,
+  "description": "Nice bottle",
+  "nose": "fruitly",
+  "taste": "oakly, sweet",
+  "finish": "long, spicy in the back of the throat"
+}
+
+{
+  "name": "Johnny Walker Black Label",
+  "rating": 8,
+  "description": "Nice bottle",
+  "nose": "fruitly",
+  "taste": "oakly, sweet",
+  "finish": "long, spicy in the back of the throat"
+}
+
+{
+  "name": "Jim Beam",
+  "rating": 8,
+  "description": "Nice bottle",
+  "nose": "fruitly",
+  "taste": "oakly, sweet",
+  "finish": "long, spicy in the back of the throat"
+}
+
+{
+  "name": "Maker's Mark",
+  "rating": 8,
+  "description": "Nice bottle",
+  "nose": "fruitly",
+  "taste": "oakly, sweet",
+  "finish": "long, spicy in the back of the throat"
+}

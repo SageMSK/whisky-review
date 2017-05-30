@@ -5,22 +5,25 @@ const path = require('path');
 
 const app = express();
 const errorHandlers = require('./services/errorHandlers');
+const routes = require('./routes/index');
 
 /* --- MIDDLEWARES --- */
 // Setting up our view engine
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+// serves up static files from the public folder
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Make req.body usable
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // I.e. req.flash('error', 'Please try again.'), which will then pass that message to the next page the user requests
-app.use(flash());
+// app.use(flash());
 
-app.get('/', (req, res) => {
-  res.render('index', { title: 'Hello World'});
-});
+// Routes
+app.use('/', routes);
 
 /* --- ERROR --- */
 app.use(errorHandlers.notFound);

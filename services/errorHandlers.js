@@ -1,7 +1,7 @@
 /*
   This replaces all the try/catch fn for Async-Await
 */
-exports.catchAsyncError = (fn) => {
+exports.catchAsyncErrors = (fn) => {
   return function (req, res, next) {
     return fn(req, res, next).catch(next);
   };
