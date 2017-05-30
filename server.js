@@ -16,7 +16,7 @@ mongoose.connection.on('error', (err) => {
   console.log(`Found Error: ${err.message}`);
 });
 mongoose.connection.once('open', () => {
-  console.log('Connected to mLab Database server!');
+  console.log('Connected to mongoDB server!');
 });
 // MongoDB/Mongoose Schema Singletons
 require('./models/Review');
