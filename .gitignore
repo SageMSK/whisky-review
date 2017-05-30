@@ -1,0 +1,14 @@
+# Node Modules
+node_modules/
+
+# local test database
+data
+
+# Any Error Logs
+*.log
+
+.DS_Store
+.idea
+
+# Local Variables
+variables.env
