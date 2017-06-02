@@ -1,0 +1,38 @@
+.nav {
+  padding: 0;
+  margin: 0;
+  color: blue;
+  display: flex;
+  font-size: 18px;
+  list-style: none;
+  justify-content: space-between;
+  border: 1px solid red;
+  &__section {
+    display: flex;
+
+    &--pages {
+      justify-content: flex-end;
+    }
+  }
+
+  &__item {
+    display: flex;
+    border: 1px solid green;
+  }
+
+  &__link {
+    display: flex;
+    padding: 20px;
+    color: black;
+    align-self: center;
+    
+    &:hover {
+      background-color: rgba(0,0,0, 0.2);
+    }
+
+    &--active {
+      background-color: black;
+      color: white;
+    }
+  }
+}

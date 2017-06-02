@@ -3,7 +3,16 @@ const Review = mongoose.model('Review');
 
 exports.getReviews = async (req, res) => {
   const reviews = await Review.find();
-  res.json(reviews);
+  res.render('whiskies', { title: 'index.pug', reviews });
+};
+
+exports.getReviewBySlug = async (req, res, next) => {
+  const review = await Review.findOne({ slug: req.params.slug });
+  if (!review) return next();
+  res.render('whisky', {
+    review,
+    title: review.name
+  });
 };
 
 exports.createReview = async (req, res) => {

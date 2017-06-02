@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  .review
+    h2= title
+    
+    .review__rating
+      p #{review.rating} / 10
+
+    .review__info
+      p Info: #{review.description}
+
+    .review__details
+      p Nose: #{review.nose}
+      p Taste:  #{review.taste}
+      p Finish:  #{review.finish}

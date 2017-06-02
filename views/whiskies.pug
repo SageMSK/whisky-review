@@ -1,0 +1,8 @@
+extends layout
+
+include mixins/_whiskyCard
+
+block content
+  h2= title
+  each review in reviews
+    +whiskyCard(review)
