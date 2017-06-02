@@ -9,9 +9,16 @@ exports.getReviews = async (req, res) => {
 exports.getReviewBySlug = async (req, res, next) => {
   const review = await Review.findOne({ slug: req.params.slug });
   if (!review) return next();
+
   res.render('whisky', {
     review,
     title: review.name
+  });
+};
+
+exports.showAddPage = (req, res) => {
+  res.render('add', {
+    title: 'add.pug'
   });
 };
 
@@ -19,7 +26,8 @@ exports.createReview = async (req, res) => {
   const review = new Review(req.body);
   const savedReview = await review.save();
 
-  res.json({ success: 'it worked', savedReview });
+  req.flash('success', `Your review for ${savedReview.name} has been created.`)
+  res.redirect(`/whisky/${savedReview.slug}`)
 };
 
 exports.updateReview = async (req, res) => {

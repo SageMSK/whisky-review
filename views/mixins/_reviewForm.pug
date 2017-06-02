@@ -1,0 +1,22 @@
+mixin reviewForm(review = {})
+  form.reviewForm(action=`/add` method="POST")
+
+    label(for="name") Name
+    input(type="text" name="name")
+
+    label(for="rating") Rate
+    input(type="number" name="rating" placeholder="Please enter a number between 1 and 10.")
+
+    label(for="description") Description
+    textarea(name="description")
+
+    label(for="nose") Nose
+    input(type="text" name="nose")
+
+    label(for="taste") Taste
+    input(type="text" name="taste")
+
+    label(for="finish") Finish
+    input(type="text" name="finish")
+
+    input(type="submit" value="Submit" class="button")

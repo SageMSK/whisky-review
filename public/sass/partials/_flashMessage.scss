@@ -1,0 +1,39 @@
+.flash {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding: 5px;
+  position: relative;
+  z-index: 10;
+  border-radius: 5px;
+  display: flex;
+
+  &__text {
+    flex: 1;
+    padding-left: 15px;
+    color: white;
+    font-weight: 600;
+  }
+  
+  &__remove {
+    background: none;
+    border: none;
+
+    &:hover {
+      font-size: 1.1rem;
+      color: yellow;
+    }
+  }
+
+  &--success {
+    background: rgb(39, 211, 33);
+  }
+
+  &--info {
+    background: rgb(254, 209, 54);
+  }
+
+  &--error {
+    background: rgb(224, 62, 62);
+  }
+}
