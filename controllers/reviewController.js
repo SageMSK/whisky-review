@@ -45,7 +45,7 @@ exports.updateReview = async (req, res) => {
   }, req.body, {
     new: true, // return the new review instead of the old one
     runValidators: true
-  }).exec(); // Make sure it runs incase of bugs
+  }).exec(); // Make sure it runs because sometimes it doesn't
 
   req.flash('success', `Your changes for ${review.name} have been saved.`);
   res.redirect(`/whisky/${review.slug}`);

@@ -7,11 +7,14 @@ const cookieParser = require('cookie-parser');
 const MongoStore = require('connect-mongo')(session);
 const expressValidator = require('express-validator');
 const flash = require('connect-flash');
+const passport = require('passport');
+const promisify = require('es6-promisify');
 
 const app = express();
 const errorHandlers = require('./services/errorHandlers');
 const pugHelpers = require('./services/pugHelpers');
 const routes = require('./routes/index');
+require('./services/passport');
 
 /* --- MIDDLEWARES --- */
 // Setting up our view engine
@@ -39,6 +42,10 @@ app.use(session({
   saveUninitialized: false,
   store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
+
+// Passport JS is what we use to handle our logins
+app.use(passport.initialize());
+app.use(passport.session());
 
 // I.e. req.flash('error', 'Please try again.'), which will then pass that message to the next page the user requests
 app.use(flash());
