@@ -7,7 +7,7 @@ require('dotenv').config({ path: 'variables.env' });
   MongoDB/Mongoose Config
   if Local
     set DATABASE=mongodb://localhost:27017/whiskyreview
-    cd C:\Program Files\MongoDB\Server\3.2\bin // Whereever mongodb is
+    cd C:\Program Files\MongoDB\Server\3.2\bin
     mongod.exe --dbpath C:\Users\minsookim\Desktop\whisky-review\data
 */
 mongoose.connect(process.env.DATABASE);

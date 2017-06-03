@@ -1,22 +1,22 @@
 mixin reviewForm(review = {})
-  form.reviewForm(action=`/add` method="POST")
+  form.reviewForm(action=`/add/${review._id || ''}` method="POST")
 
     label(for="name") Name
-    input(type="text" name="name")
+    input(type="text" name="name" value=review.name)
 
     label(for="rating") Rate
-    input(type="number" name="rating" placeholder="Please enter a number between 1 and 10.")
+    input(type="number" name="rating" placeholder="Please enter a number between 1 and 10." value=review.rating)
 
     label(for="description") Description
-    textarea(name="description")
+    textarea(name="description")= review.description
 
     label(for="nose") Nose
-    input(type="text" name="nose")
+    input(type="text" name="nose" value=review.nose)
 
     label(for="taste") Taste
-    input(type="text" name="taste")
+    input(type="text" name="taste" value=review.taste)
 
     label(for="finish") Finish
-    input(type="text" name="finish")
+    input(type="text" name="finish" value=review.finish)
 
     input(type="submit" value="Submit" class="button")

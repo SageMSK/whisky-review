@@ -11,6 +11,7 @@ router.get('/', catchAsyncErrors(reviewController.getReviews));
 router.get('/whiskies', catchAsyncErrors(reviewController.getReviews));
 router.get('/whisky/:slug', catchAsyncErrors(reviewController.getReviewBySlug));
 router.get('/add', reviewController.showAddPage);
+router.get('/whisky/:id/edit', catchAsyncErrors(reviewController.showEditPage));
 
 /*
   POST Methods

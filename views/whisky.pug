@@ -1,8 +1,12 @@
 extends layout
 
 block content
+  a(href="/whiskies") Back to Whiskies
+
   .review
     h2= title
+
+    a(href=`/whisky/${review._id}/edit` class="button") Edit
     
     .review__rating
       p #{review.rating} / 10

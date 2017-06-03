@@ -22,6 +22,15 @@ exports.showAddPage = (req, res) => {
   });
 };
 
+exports.showEditPage = async (req, res) => {
+  const review = await Review.findOne({ _id: req.params.id });
+
+  res.render('add', {
+    title: `Edit.pug : ${review.name}`,
+    review
+  });
+};
+
 exports.createReview = async (req, res) => {
   const review = new Review(req.body);
   const savedReview = await review.save();
@@ -38,5 +47,6 @@ exports.updateReview = async (req, res) => {
     runValidators: true
   }).exec(); // Make sure it runs incase of bugs
 
-  res.json({ success: 'it worked', review });
+  req.flash('success', `Your changes for ${review.name} have been saved.`);
+  res.redirect(`/whisky/${review.slug}`);
 };
