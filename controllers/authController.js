@@ -21,5 +21,5 @@ exports.requireUser = (req, res, next) => {
   }
   // If not
   req.flash('error', 'You must be logged in.');
-  req.redirect('/login');
+  res.redirect('/login');
 };

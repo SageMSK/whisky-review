@@ -20,7 +20,11 @@ html
 
             if user
               li.nav__item
-                a.nav__link(href='/logout', class=(currentPath.startsWith('/logout') ? 'nav__link--active' : '')) Log Out
+                .dropdown
+                  div.nav__link.dropbtn #{user.firstName}
+                  #myDropdown.dropdown-content
+                    a.dropdown__link(href="#") Account
+                    a.dropdown__link(href="/logout") Log Out
             else
               li.nav__item
                 a.nav__link(href='/register', class=(currentPath.startsWith('/register') ? 'nav__link--active' : '')) Register
