@@ -17,6 +17,7 @@ router.get('/whisky/:id/edit', catchAsyncErrors(reviewController.showEditPage));
 router.get('/login', userController.loginPage);
 router.get('/register', userController.registrationPage);
 router.get('/logout', authController.logout);
+router.get('/user', authController.requireUser, userController.getUserPage);
 
 /*
   POST Methods
@@ -25,8 +26,13 @@ router.post('/add', catchAsyncErrors(reviewController.createReview));
 router.post('/add/:id', catchAsyncErrors(reviewController.updateReview));
 router.post('/register', 
   catchAsyncErrors(userController.createUser),
+  userController.validateRegister,
   authController.login
 );
 router.post('/login', authController.login);
+router.post('/user', 
+  authController.requireUser, 
+  catchAsyncErrors(userController.updateUserInfo)
+);
 
 module.exports = router;

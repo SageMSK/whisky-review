@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h2= title
+  p Hello #{user.firstName}!
+
+  form.form(action=`/user` method="POST")
+    label(for="firstName") First Name
+    input(type="text" name="firstName" value=user.firstName)
+
+    label(for="lastName") Last Name
+    input(type="text" name="lastName" value=user.lastName)
+
+    label(for="email") Email
+    input(type="text" name="email" value=user.email)
+
+    input(type="submit" value="Update Information")
