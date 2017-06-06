@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  form.userForm(action="/login" method="POST")
+  form.form.userForm(action="/login" method="POST")
     h2= title
 
     label(for="email") Email
@@ -9,5 +9,11 @@ block content
 
     label(for="password") Password
     input(type="password" name="password" placeholder="Password" required)
+    a.userForm__forgot(href="/") Forgot your password?
 
-    input(type="submit" value="Log In")
+    input.button(type="submit" value="Log In")
+
+    hr.underline
+
+    p.userForm__message Don't have an account? 
+      a.userForm__link(href="/register") Create Your Free Account

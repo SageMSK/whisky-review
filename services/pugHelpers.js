@@ -12,6 +12,5 @@ exports.websiteName = `Whisky Reviewer`;
 
 exports.menu = [
   { slug: '/whiskies', title: 'Whiskies' },
-  { slug: '/top', title: 'Top' },
-  { slug: '/add', title: 'Add' }
+  { slug: '/about', title: 'About' }
 ];

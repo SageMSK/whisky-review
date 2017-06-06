@@ -5,8 +5,11 @@ block content
 
   .review
     h2= title
-
-    a(href=`/whisky/${review._id}/edit` class="button") Edit
+    
+    if user && review.author.equals(user._id)
+      a(href=`/whisky/${review._id}/edit` class="button") Edit
+    
+    p By #{review.author.firstName} at #{h.moment(review.created).format("MMMM Mo YYYY, h:mm a")}
     
     .review__rating
       p #{review.rating} / 10

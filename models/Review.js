@@ -10,6 +10,8 @@ const reviewSchema = new mongoose.Schema({
   slug: String,
   rating: {
     type: Number,
+    min: 1,
+    max: 10,
     required: 'Please provide a rating.'
   },
   photo: String,
@@ -31,6 +33,15 @@ const reviewSchema = new mongoose.Schema({
     type: String,
     trim: true,
     required: 'Please provide the finish.'
+  },
+  created: {
+    type: Date,
+    default: Date.now
+  },
+  author: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'User',
+    required: 'You need an author.'
   }
 });
 

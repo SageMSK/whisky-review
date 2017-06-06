@@ -1,7 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
 }
 
 a {
@@ -9,11 +10,52 @@ a {
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .button {
-  margin-top: 10px;
-  padding: 20px 10px;
+  border: none;
+  color: white;
+  font-size: 20px;
+  background: rgb(242, 209, 48);
+  margin-top: 20px;
+  padding: 15px 0;
+  border-radius: 5px;
+
+  &:hover {
+    background: rgb(255, 219, 48);
+    cursor: pointer;
+  }
+}
+
+/* 
+  BASIC FORM
+ */
+.form {
+  background: white;
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 2px 13px -5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 2px 13px -5px rgba(0,0,0,0.75);
+  box-shadow: 1px 2px 13px -5px rgba(0,0,0,0.75);
+}
+
+input, textarea {
+  width: 100%;
+  border: 1px solid rgb(163, 163, 163);
+  padding: 10px;
+}
+
+input[type=submit] {
+  width: 100%;
+}
+
+input::placeholder {
+  color: rgb(183, 183, 183);
+}
+
+label {
+  padding: 10px 0;
+  display: block;
 }

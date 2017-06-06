@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  form.userForm(action="/register" method="POST")
+  form.form.userForm(action="/register" method="POST")
     h2= title
 
     label(for="email") Email
@@ -19,4 +19,8 @@ block content
     label(for="password-confirm") Confirm Password
     input(type="password" name="password-confirm" placeholder="Password" required)
 
-    input(type="submit" value="Register")
+    input.button(type="submit" value="Create Your Account")
+
+    hr.underline
+
+    p.userForm__message: a.userForm__link(href="/login") Already have an account?

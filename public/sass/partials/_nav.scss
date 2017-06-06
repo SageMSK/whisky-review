@@ -1,6 +1,7 @@
 .nav {
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 1200px;
   color: blue;
   display: flex;
   font-size: 18px;
@@ -36,8 +37,36 @@
     }
   }
 
-  .dropdown-content {
-    display: none;
+  .dropbtn {
+    cursor: pointer;
+  }
+
+  .dropdown {
+    position: relative;
+
+    &__content {
+      display: none;
+      position: absolute;
+      background: white;
+      min-width: 160px;
+      z-index: 1;
+      right: 0;
+      border: 1px solid black;
+    }
+
+    &__link {
+      color: black;
+      padding: 15px;
+      display: block;
+
+      &:hover {
+        background: rgb(241, 241, 241);
+      }
+    }
+
+    .logout {
+      color: red;
+    }
   }
 
   .show {

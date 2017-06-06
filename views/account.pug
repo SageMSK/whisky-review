@@ -4,7 +4,7 @@ block content
   h2= title
   p Hello #{user.firstName}!
 
-  form.form(action=`/user` method="POST")
+  form(action=`/user` method="POST")
     label(for="firstName") First Name
     input(type="text" name="firstName" value=user.firstName)
 
@@ -14,4 +14,4 @@ block content
     label(for="email") Email
     input(type="text" name="email" value=user.email)
 
-    input(type="submit" value="Update Information")
+    input.button(type="submit" value="Update Information")

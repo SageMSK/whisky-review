@@ -4,5 +4,9 @@ include mixins/_whiskyCard
 
 block content
   h2= title
+
+  if user
+    p: a.button(href="/add") Add
+    
   each review in reviews
     +whiskyCard(review)

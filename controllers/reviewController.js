@@ -1,13 +1,17 @@
 const mongoose = require('mongoose');
 const Review = mongoose.model('Review');
 
+exports.getHomePage = (req, res) => {
+  res.render('homepage', { title: 'Home' });
+};
+
 exports.getReviews = async (req, res) => {
   const reviews = await Review.find();
-  res.render('whiskies', { title: 'index.pug', reviews });
+  res.render('whiskies', { title: 'Whiskies', reviews });
 };
 
 exports.getReviewBySlug = async (req, res, next) => {
-  const review = await Review.findOne({ slug: req.params.slug });
+  const review = await Review.findOne({ slug: req.params.slug }).populate('author');
   if (!review) return next();
 
   res.render('whisky', {
@@ -16,9 +20,15 @@ exports.getReviewBySlug = async (req, res, next) => {
   });
 };
 
+exports.getAboutPage = (req, res) => {
+  res.render('about', {
+    title: 'About'
+  })
+};
+
 exports.showAddPage = (req, res) => {
   res.render('add', {
-    title: 'add.pug'
+    title: 'New Whisky Review'
   });
 };
 
@@ -32,6 +42,9 @@ exports.showEditPage = async (req, res) => {
 };
 
 exports.createReview = async (req, res) => {
+  // Set the author to the current user for reference.
+  req.body.author = req.user._id;
+
   const review = new Review(req.body);
   const savedReview = await review.save();
 

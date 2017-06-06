@@ -4,6 +4,11 @@
 */
 window.onclick = function (e) {
   let myDropdown = document.getElementById("myDropdown");
+  // When user is not logged in, remove the error in console
+  if (myDropdown === null) {
+    return;
+  }
+
   myDropdown.classList.toggle("show");
 
   if (!e.target.matches('.dropbtn')) {

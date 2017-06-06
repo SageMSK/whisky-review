@@ -67,7 +67,7 @@ exports.createUser = async (req, res, next) => {
 };
 
 exports.getUserPage = (req, res) => {
-  res.render('account', { title: 'Edit Your account' });
+  res.render('account', { title: 'Profile' });
 };
 
 exports.updateUserInfo = async (req, res) => {
