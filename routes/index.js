@@ -9,7 +9,7 @@ const { catchAsyncErrors } = require('./../services/errorHandlers');
 /*
   GET Methods for fetching pages
 */
-router.get('/', reviewController.getHomePage);
+router.get('/', catchAsyncErrors(reviewController.getReviews));
 router.get('/whiskies', catchAsyncErrors(reviewController.getReviews));
 router.get('/whisky/:slug', catchAsyncErrors(reviewController.getReviewBySlug));
 router.get('/add', authController.requireUser, reviewController.showAddPage);
