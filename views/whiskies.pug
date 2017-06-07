@@ -3,10 +3,10 @@ extends layout
 include mixins/_whiskyCard
 
 block content
-  h2= title
-
-  if user
-    p: a.button(href="/add") Add
+  .whisky
+    h2.title= title
+      if user
+        a.button.whisky__button(href="/add") Add
   
   .inner-flex-container
     each review in reviews

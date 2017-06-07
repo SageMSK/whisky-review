@@ -1,5 +1,6 @@
 mixin reviewForm(review = {})
   form.form.reviewForm(action=`/add/${review._id || ''}` method="POST")
+    h2.reviewForm__title= title
 
     label(for="name") Name
     input(type="text" name="name" value=review.name)

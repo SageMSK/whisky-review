@@ -1,13 +1,11 @@
 extends layout
 
 block content
-  a(href="/whiskies") Back to Whiskies
-
   .review
-    h2= title
-    
-    if user && review.author.equals(user._id)
-      a(href=`/whisky/${review._id}/edit` class="button") Edit
+    a.back-to-index(href="/whiskies") Back to Whiskies
+    h2.review__title #{review.name}
+      if user && review.author.equals(user._id)
+        a.button.review__button(href=`/whisky/${review._id}/edit`) Edit
     
     p By #{review.author.firstName} at #{h.moment(review.created).format("MMMM Mo YYYY, h:mm a")}
     
@@ -18,6 +16,6 @@ block content
       p Info: #{review.description}
 
     .review__details
-      p Nose: #{review.nose}
-      p Taste:  #{review.taste}
-      p Finish:  #{review.finish}
+      p.review__details--nose Nose: #{review.nose}
+      p.review__details--taste Taste:  #{review.taste}
+      p.review__details--finish Finish:  #{review.finish}

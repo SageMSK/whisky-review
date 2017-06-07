@@ -5,9 +5,19 @@ body {
   font-size: 16px;
 }
 
+h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
 a {
+  display: block;
   text-decoration: none;
   color: black;
+}
+
+.title {
+  margin: 25px 0;
 }
 
 .container {
@@ -26,7 +36,7 @@ a {
   font-size: 20px;
   background: rgb(242, 209, 48);
   margin-top: 20px;
-  padding: 15px;
+  padding: 10px;
   border-radius: 5px;
 
   &:hover {
