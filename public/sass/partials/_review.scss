@@ -1,11 +1,38 @@
 .review {
   font-family: 'Roboto', sans-serif;
 
+  &__title {
+    margin-top: 24px;
+    font-size: 2rem;
+  }
+
+  &__author {
+    padding-left: 5px;
+    font-size: 0.9rem;
+    color: $grey;
+
+    &:hover {
+      color: black;
+    }
+  }
+
   &__button {
+    position: relative;
+    bottom: 6px;
     margin: 0;
     margin-left: 15px;
     padding: 5px 10px;
     display: inline-block;
+  }
+
+  &__details {
+    border: 2px solid $grey;
+    border-radius: 2px;
+    padding: 13px;
+
+    p {
+      line-height: 2;
+    }
   }
 
 

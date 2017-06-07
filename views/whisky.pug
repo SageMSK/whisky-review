@@ -7,7 +7,8 @@ block content
       if user && review.author.equals(user._id)
         a.button.review__button(href=`/whisky/${review._id}/edit`) Edit
     
-    p By #{review.author.firstName} at #{h.moment(review.created).format("MMMM Mo YYYY, h:mm a")}
+    p.review__author By #{review.author.firstName} at 
+      span.review__date #{h.moment(review.created).format("MMMM Mo YYYY, h:mm a")}
     
     .review__rating
       p #{review.rating} / 10
@@ -16,6 +17,12 @@ block content
       p Info: #{review.description}
 
     .review__details
-      p.review__details--nose Nose: #{review.nose}
-      p.review__details--taste Taste:  #{review.taste}
-      p.review__details--finish Finish:  #{review.finish}
+      p
+        strong Nose: 
+        | #{review.nose}
+      p
+        strong Taste: 
+        | #{review.taste}
+      p
+        strong Finish: 
+        | #{review.finish}

@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 const mongoosedbErrorHandler = require('mongoose-mongodb-errors');
 const passportLocalMongoose = require('passport-local-mongoose');
+const md5 = require('md5');
 
 const userSchema = new mongoose.Schema({
   email: {
@@ -25,6 +26,14 @@ const userSchema = new mongoose.Schema({
   resetPasswordToken: String,
   resetPasswordExpires: Date
 });
+
+/*
+  Virtual Field for Gravatar
+*/
+userSchema.virtual('gravatar').get(function () {
+  const hash = md5(this.email);
+  return `https://gravatar.com/avatar/${hash}?s=200`;
+})
 
 userSchema.plugin(passportLocalMongoose, { usernameField: 'email' });
 userSchema.plugin(mongoosedbErrorHandler);
