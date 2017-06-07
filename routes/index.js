@@ -19,6 +19,9 @@ router.get('/login', userController.loginPage);
 router.get('/register', userController.registrationPage);
 router.get('/logout', authController.logout);
 router.get('/user', authController.requireUser, userController.getUserPage);
+router.get('/password_reset', authController.getResetPasswordPage);
+router.get('/user/reset/:token', catchAsyncErrors(authController.getPasswordPage));
+
 
 /*
   POST Methods
@@ -26,14 +29,21 @@ router.get('/user', authController.requireUser, userController.getUserPage);
 router.post('/add', catchAsyncErrors(reviewController.createReview));
 router.post('/add/:id', catchAsyncErrors(reviewController.updateReview));
 router.post('/register', 
-  catchAsyncErrors(userController.createUser),
   userController.validateRegister,
+  catchAsyncErrors(userController.createUser),
   authController.login
 );
 router.post('/login', authController.login);
 router.post('/user', 
   authController.requireUser, 
-  catchAsyncErrors(userController.updateUserInfo)
+  catchAsyncErrors(authController.updateUserInfo)
 );
+router.post('/password_reset', catchAsyncErrors(authController.sendResetMail));
+router.post('/user/reset/:token', 
+  authController.confirmNewPasswords,
+  catchAsyncErrors(authController.updateNewPassword)
+);
+
+
 
 module.exports = router;

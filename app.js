@@ -59,6 +59,14 @@ app.use((req, res, next) => {
   next();
 });
 
+// promisify some callback based APIs
+// NEEDED in authController.updateNewPassword
+// Need for auto re-login
+app.use((req, res, next) => {
+  req.login = promisify(req.login, req);
+  next();
+});
+
 // Routes
 app.use('/', routes);
 

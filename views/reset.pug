@@ -1,0 +1,17 @@
+extends headerless_layout
+
+block content
+  form.form.password-reset-form(method="POST")
+    h2= title
+    p.password-reset-form__message Enter your new password.
+
+    hr.underline
+
+    label(for="password") Password
+    input(type="password" name="password" required)
+
+    label(for="password-confirm") Confirm Password
+    input(type="password" name="password-confirm" required)
+
+    input.button(type="submit" value="Reset Password")
+    a.button.cancel(href="/login") Cancel
