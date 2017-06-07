@@ -1,11 +1,17 @@
 .whiskycard {
   padding: 15px;
-  margin: 10px;
-  width: 330px;
+  margin: 10px 0;
+  width: 250px;
+  text-align: center;
   border: 1px solid $light-grey;
   -webkit-box-shadow: 1px 1px 10px -5px rgba(0,0,0,0.75);
   -moz-box-shadow: 1px 1px 10px -5px rgba(0,0,0,0.75);
   box-shadow: 1px 1px 10px -5px rgba(0,0,0,0.75);
+
+  &__img {
+    max-width: 200;
+    max-height: 500;
+  }
 
   &__title {
     margin: 10px 0;
