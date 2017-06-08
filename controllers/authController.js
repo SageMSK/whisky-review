@@ -58,7 +58,7 @@ exports.sendResetMail = async (req, res) => {
   });
 
   // Redirect to login page
-  req.flash('success', `Email Sent! ${resetURL}`)
+  req.flash('success', `Email Sent!`)
   res.redirect('/login');
 };
 
