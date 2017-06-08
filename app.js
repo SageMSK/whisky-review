@@ -9,6 +9,7 @@ const expressValidator = require('express-validator');
 const flash = require('connect-flash');
 const passport = require('passport');
 const promisify = require('es6-promisify');
+const favicon = require('serve-favicon');
 
 const app = express();
 const errorHandlers = require('./services/errorHandlers');
@@ -23,6 +24,7 @@ app.set('view engine', 'pug');
 
 // serves up static files from the public folder
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 // Make req.body usable
 app.use(bodyParser.json());
