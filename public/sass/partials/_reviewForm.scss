@@ -1,4 +1,13 @@
 .reviewForm {
   padding: 25px;
+
+  &__innerflex {
+    display: flex;
+  }
+
+  &__details {
+    display: inline-block;
+    width: 100%;
+  }
 }
 

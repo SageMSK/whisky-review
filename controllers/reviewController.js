@@ -36,7 +36,7 @@ exports.showEditPage = async (req, res) => {
   const review = await Review.findOne({ _id: req.params.id });
 
   res.render('add', {
-    title: `Edit.pug : ${review.name}`,
+    title: `Editing: ${review.name}`,
     review
   });
 };

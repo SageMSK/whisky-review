@@ -3,7 +3,8 @@ extends layout
 block content
   .review
     a.back-to-index(href="/whiskies") Back to Whiskies
-    h2.review__title #{review.name}
+    p.review__title #{review.name}
+      span.review__bottle-details (#{review.abv}% / #{review.amount}ml)
       if user && review.author.equals(user._id)
         a.button.review__button(href=`/whisky/${review._id}/edit`) Edit
     
@@ -14,15 +15,18 @@ block content
       p #{review.rating} / 10
 
     .review__info
-      p Info: #{review.description}
+      p.review__info--title #{review.name} Notes:
+      p.review__info-notes #{review.description}
 
     .review__details
+      p.review__details--title Tasting Notes
+
       p
         strong Nose: 
         | #{review.nose}
       p
-        strong Taste: 
-        | #{review.taste}
+        strong Palate: 
+        | #{review.palate}
       p
         strong Finish: 
         | #{review.finish}

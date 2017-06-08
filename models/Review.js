@@ -8,6 +8,14 @@ const reviewSchema = new mongoose.Schema({
     required: 'Please provide the name of the drink.'
   },
   slug: String,
+  abv: {
+    type: Number,
+    required: 'Please provide the Alcohol by Volume.'
+  },
+  amount: {
+    type: Number,
+    required: 'Please provide the bottle amount in milliliters.'
+  },
   rating: {
     type: Number,
     min: 1,
@@ -24,10 +32,10 @@ const reviewSchema = new mongoose.Schema({
     trim: true,
     required: 'Please provide the aroma.'
   },
-  taste: {
+  palate: {
     type: String,
     trim: true,
-    required: 'Please provide the taste.'
+    required: 'Please provide the palate.'
   },
   finish: {
     type: String,

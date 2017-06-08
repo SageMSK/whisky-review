@@ -3,19 +3,28 @@ mixin reviewForm(review = {})
     h2.reviewForm__title= title
 
     label(for="name") Name
-    input(type="text" name="name" value=review.name)
+    input(type="text" name="name" placeholder="I.e. Johnnie Walker Black Label 12 year old" value=review.name)
+
+    .reviewForm__innerflex
+      .reviewForm__details
+        label(for="abv") ABV (%)
+        input(type="number" name="abv" min="1" placeholder="Alcohol by Volume, i.e. 40" value=review.abv)
+
+      .reviewForm__details
+        label(for="amount") Amount (ml)
+        input(type="number" name="amount" min="1" placeholder="Amount, i.e. 750ml" value=review.amount)
 
     label(for="rating") Rate
     input(type="number" name="rating" placeholder="Please enter a number between 1 and 10." min="1" max="10" value=review.rating)
 
     label(for="description") Description
-    textarea(name="description")= review.description
+    textarea(name="description" placeholder="Notes here")= review.description
 
     label(for="nose") Nose
     input(type="text" name="nose" value=review.nose)
 
-    label(for="taste") Taste
-    input(type="text" name="taste" value=review.taste)
+    label(for="palate") Palate
+    input(type="text" name="palate" value=review.palate)
 
     label(for="finish") Finish
     input(type="text" name="finish" value=review.finish)
