@@ -1,5 +1,4 @@
 .whiskycard {
-  padding: 15px;
   margin: 10px 0;
   width: 250px;
   text-align: center;
@@ -9,12 +8,15 @@
   box-shadow: 1px 1px 10px -5px rgba(0,0,0,0.75);
 
   &__img {
-    max-width: 200;
-    max-height: 500;
+    height: 180px;
+  }
+
+  &__info {
+    padding: 10px;
   }
 
   &__title {
-    margin: 10px 0;
+    padding: 5px;
   }
 
   &__detail {
