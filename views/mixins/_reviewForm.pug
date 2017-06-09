@@ -1,5 +1,5 @@
 mixin reviewForm(review = {})
-  form.form.reviewForm(action=`/add/${review._id || ''}` method="POST")
+  form.form.reviewForm(action=`/add/${review._id || ''}` method="POST" enctype="multipart/form-data")
     h2.reviewForm__title= title
 
     label(for="name") Name
@@ -13,6 +13,12 @@ mixin reviewForm(review = {})
       .reviewForm__details
         label(for="amount") Amount (ml)
         input(type="number" name="amount" min="1" placeholder="Amount, i.e. 750ml" value=review.amount)
+
+    //- Upload Images
+    label(for="photo") Images
+      input(type="file" name="photo" id="photo" accept="image/gif, image/png, image/jpeg")
+      if (review.photo)
+        img(src=`/uploads/${review.photo}`, alt=review.name, title=review.name, width=200)
 
     label(for="rating") Rate
     input(type="number" name="rating" placeholder="Please enter a number between 1 and 10." min="1" max="10" value=review.rating)

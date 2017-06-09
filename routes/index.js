@@ -26,8 +26,16 @@ router.get('/user/reset/:token', catchAsyncErrors(authController.getPasswordPage
 /*
   POST Methods
 */
-router.post('/add', catchAsyncErrors(reviewController.createReview));
-router.post('/add/:id', catchAsyncErrors(reviewController.updateReview));
+router.post('/add',
+  reviewController.uploadImage,
+  catchAsyncErrors(reviewController.resizeImage),
+  catchAsyncErrors(reviewController.createReview)
+);
+router.post('/add/:id',
+  reviewController.uploadImage,
+  catchAsyncErrors(reviewController.resizeImage),
+  catchAsyncErrors(reviewController.updateReview)
+);
 router.post('/register', 
   userController.validateRegister,
   catchAsyncErrors(userController.createUser),
