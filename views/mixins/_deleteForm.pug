@@ -1,0 +1,15 @@
+mixin deleteForm(review = {})
+  form.form.reviewForm(method="POST")
+    h2.reviewForm__title= title
+
+    br
+    p Are you sure you wish to delete this review?
+    p If you want to delete this review, please re-type this review name
+    br
+    h4 "#{review.slug}"
+    br
+
+    label(for="slug") Name
+    input(type="text" name="slug" placeholder="I.e. makers-mark")
+
+    input.button.delete#deleteFormButton(type="submit" value="Delete Review")

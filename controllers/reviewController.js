@@ -106,3 +106,37 @@ exports.updateReview = async (req, res) => {
   req.flash('success', `Your changes for ${review.name} have been saved.`);
   res.redirect(`/whisky/${review.slug}`);
 };
+
+exports.deleteReviewPage = async (req, res) => {
+  const review = await Review.findOne({
+    _id: req.params.id
+  });
+
+  res.render('delete', {
+    title: `Deleting: ${review.name}`,
+    review
+  });
+};
+
+exports.deleteReview = async (req, res) => {
+  const review = await Review.findOne({
+    _id: req.params.id
+  });
+  // check if review exists
+  if (!review) {
+    req.flash('error', "This whisky review does not exist.");
+    return res.redirect('back');
+  }
+
+  console.log(req.body.slug);
+
+  if (review.slug !== req.body.slug) {
+    req.flash('error', "Review name does not match.");
+    return res.redirect('back');
+  }
+
+  await review.remove();
+
+  req.flash('success', "Your whisky review has been deleted.");
+  res.redirect('/whiskies');
+};

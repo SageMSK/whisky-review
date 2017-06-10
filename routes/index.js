@@ -21,6 +21,7 @@ router.get('/logout', authController.logout);
 router.get('/user', authController.requireUser, userController.getUserPage);
 router.get('/password_reset', authController.getResetPasswordPage);
 router.get('/user/reset/:token', catchAsyncErrors(authController.getPasswordPage));
+router.get('/whisky/:id/delete', catchAsyncErrors(reviewController.deleteReviewPage));
 
 
 /*
@@ -51,7 +52,8 @@ router.post('/user/reset/:token',
   authController.confirmNewPasswords,
   catchAsyncErrors(authController.updateNewPassword)
 );
-
+// Really don't want to use POST but will change to AJAX DELETE method
+router.post('/whisky/:id/delete', catchAsyncErrors(reviewController.deleteReview));
 
 
 module.exports = router;

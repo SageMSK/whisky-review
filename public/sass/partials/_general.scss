@@ -25,6 +25,10 @@ a {
   margin: 0 auto;
 }
 
+.content {
+  min-height: 60vh;
+}
+
 .inner-flex-container {
   display: flex;
   flex-wrap: wrap;
@@ -43,6 +47,14 @@ a {
   &:hover {
     background: rgb(255, 219, 48);
     cursor: pointer;
+  }
+}
+
+.delete {
+  background-color: $red;
+
+  &:hover {
+    background-color: rgb(255, 43, 43);
   }
 }
 
