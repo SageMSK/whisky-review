@@ -1,4 +1,8 @@
-extends headerless_layout
+extends layout
+
+//- Remove the header and footer
+block header
+block footer
 
 block content
   form.form.password-reset-form(method="POST")

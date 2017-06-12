@@ -1,5 +1,15 @@
 .about {
   p {
     font-size: 1.1rem;
+    line-height: 1.1;
+  }
+
+  &__link {
+    display: inline-block;
+    color: rgb(39, 107, 216);
+
+    &:hover {
+      color: rgb(24, 81, 173);
+    }
   }
 }

@@ -50,21 +50,22 @@ html
     .container.content
       block content
 
-    footer.footer
-      .footer__upper
-        h1 Follow Us
-        ul.footer__socialmedia_list
-          li.footer__socialmedia.facebook
-            a(href="https://www.facebook.com" target="_blank")
-              i.fa.fa-facebook(aria-hidden="true")
-          li.footer__socialmedia.instagram
-            a(href="https://www.instagram.com" target="_blank")
-              i.fa.fa-instagram(aria-hidden="true")
-          li.footer__socialmedia.twitter
-            a(href="https://www.twitter.com" target="_blank")
-              i.fa.fa-twitter(aria-hidden="true")
-      .footer__lower
-        p &copy; 2017 Min Soo Kim, Whisky Reviewer
+    block footer
+      footer.footer
+        .footer__upper
+          h1 Follow Us
+          ul.footer__socialmedia_list
+            li.footer__socialmedia.facebook
+              a(href="https://www.facebook.com" target="_blank" title="Facebook")
+                i.fa.fa-facebook(aria-hidden="true")
+            li.footer__socialmedia.instagram
+              a(href="https://www.instagram.com" target="_blank" title="Instagram")
+                i.fa.fa-instagram(aria-hidden="true")
+            li.footer__socialmedia.twitter
+              a(href="https://www.twitter.com" target="_blank" title="Twitter")
+                i.fa.fa-twitter(aria-hidden="true")
+        .footer__lower
+          p &copy; 2017 Min Soo Kim, Whisky Reviewer
 
     block scripts
       script(src="/dist/App.bundle.js")
