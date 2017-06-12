@@ -5,7 +5,7 @@ node_modules/
 data
 
 # ignore dist files
-public/dist/
+#public/dist/
 
 # ignore public upload images
 public/uploads
