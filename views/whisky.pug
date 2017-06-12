@@ -2,32 +2,42 @@ extends layout
 
 block content
   .review
-    a.back-to-index(href="/whiskies") Back to Whiskies
-    p.review__title #{review.name}
-      span.review__bottle-details (#{review.abv}% / #{review.amount}ml)
-      if user && review.author.equals(user._id)
-        a.button.review__button(href=`/whisky/${review._id}/edit`) Edit
-        a.button.review__button.delete(href=`/whisky/${review._id}/delete`) Delete
+    .review__header
+      a.back-to-index(href="/whiskies") Back to Whiskies
+      p.review__title #{review.name}
+        span.review__bottle-details (#{review.abv}% / #{review.amount}ml)
+        if user && review.author.equals(user._id)
+          a.button.review__button(href=`/whisky/${review._id}/edit`) Edit
+          a.button.review__button.delete(href=`/whisky/${review._id}/delete`) Delete
+      
+      p.review__author By #{review.author.firstName} at 
+        span.review__date #{h.moment(review.created).format("MMMM Mo YYYY, h:mm a")}
     
-    p.review__author By #{review.author.firstName} at 
-      span.review__date #{h.moment(review.created).format("MMMM Mo YYYY, h:mm a")}
-    
-    .review__rating
-      p #{review.rating} / 10
+    .review__image-aside
+      img(src=`/uploads/${review.photo || ''}`, alt=`${review.name}`, title=`${review.name}`)
 
-    .review__info
-      p.review__info--title #{review.name} Notes:
-      p.review__info-notes #{review.description}
+    .review__info-section
+      p.review__rating
+        strong Rate: 
+        | #{review.rating} / 10
 
-    .review__details
-      p.review__details--title Tasting Notes
+      .review__description
+        p.review__description--title
+          strong #{review.name} Notes:
+        p.review__description-notes #{review.description}
 
-      p
-        strong Nose: 
-        | #{review.nose}
-      p
-        strong Palate: 
-        | #{review.palate}
-      p
-        strong Finish: 
-        | #{review.finish}
+      .review__details
+        p.review__details--title Tasting Notes 
+
+        p.review__details--msg
+          strong Nose: 
+          | #{review.nose}
+        p.review__details--msg
+          strong Palate
+          | : #{review.palate}
+        p.review__details--msg
+          strong Finish
+          | : #{review.finish}
+
+    .review__comment-section
+      h2 Comment Below:

@@ -1,17 +1,22 @@
 .review {
   font-family: 'Roboto', sans-serif;
+  padding: 5px;
+  display: flex;
+  flex-flow: row wrap;
+  
+  &__header, &__info-section, &__comment-section {
+    flex: 1 100%;
+  }
+
+  &__info-section {
+    width: 350px;
+    flex: 1 auto;
+    padding: 5px;
+  }
 
   &__title {
     margin-top: 24px;
     font-size: 1.6rem;
-  }
-
-  &__bottle-details {
-    padding-left: 3px;
-    position: relative;
-    font-size: 1.1rem;
-    bottom: 2px;
-    color: rgb(178, 101, 28);
   }
 
   &__author {
@@ -24,6 +29,43 @@
     }
   }
 
+  &__image-aside {
+    img {
+      padding: 10px;
+      height: 350px;
+      width: auto;
+      border-radius: 2px;
+    }
+  }
+
+  &__info-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  &__bottle-details {
+    padding-left: 3px;
+    font-size: 1.1rem;
+    bottom: 2px;
+    color: rgb(178, 101, 28);
+  }
+
+  &__description {
+    margin: 20px 0;
+  }
+
+  &__details {
+    border: 2px solid $grey;
+    border-radius: 2px;
+    padding: 13px;
+
+    &--msg {
+      font-size: 0.9rem;
+      line-height: 2;
+    }
+  }
+
   &__button {
     position: relative;
     bottom: 3px;
@@ -33,17 +75,6 @@
     display: inline-block;
   }
 
-  &__details {
-    border: 2px solid $grey;
-    border-radius: 2px;
-    padding: 13px;
-
-    p {
-      line-height: 2;
-    }
-  }
-
-
   .back-to-index {
     font-size: 14px;
     display: inline-block;
@@ -52,6 +83,23 @@
 
     &:hover {
       background: $light-grey;
+    }
+  }
+
+  &__comment-section {
+    margin-top: 50px;
+    padding: 5px;
+    border: 2px solid $grey;
+  }
+}
+
+/* Small screens */
+@media all and (max-width: 500px) {
+  .review {
+    &__image-aside {
+      display: flex;
+      justify-content: center;
+      flex: 1 100%;
     }
   }
 }

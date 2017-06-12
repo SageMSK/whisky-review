@@ -1,4 +1,5 @@
 mixin deleteForm(review = {})
+  a.button.backButton(href=`/whisky/${review.slug}`) Back
   form.form.reviewForm(method="POST")
     h2.reviewForm__title= title
 
