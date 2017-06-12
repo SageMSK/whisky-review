@@ -1,4 +1,4 @@
 # Whisky Review Website
 
-Hosted on heroku: [Website Coming soon](https://www.google.com)
+Hosted on heroku: [https://whiskyreviewer.herokuapp.com/](https://whiskyreviewer.herokuapp.com/)
 
