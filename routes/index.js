@@ -4,6 +4,7 @@ const router = express.Router();
 const reviewController = require('./../controllers/reviewController');
 const userController = require('./../controllers/userController');
 const authController = require('./../controllers/authController');
+const commentController = require('./../controllers/commentController');
 const { catchAsyncErrors } = require('./../services/errorHandlers');
 
 /*
@@ -54,6 +55,9 @@ router.post('/user/reset/:token',
 );
 // Really don't want to use POST but will change to AJAX DELETE method
 router.post('/whisky/:id/delete', catchAsyncErrors(reviewController.deleteReview));
-
+router.post('/comments/:id',
+  authController.requireUser,
+  catchAsyncErrors(commentController.addComment)
+);
 
 module.exports = router;

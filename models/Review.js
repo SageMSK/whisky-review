@@ -51,6 +51,9 @@ const reviewSchema = new mongoose.Schema({
     ref: 'User',
     required: 'You need an author.'
   }
+}, { // Shows virtual fields
+  toJSON: { virtuals: true },
+  toObject: { virtuals: true }
 });
 
 /*
@@ -73,5 +76,24 @@ reviewSchema.pre('save', async function (next) {
 
   next();
 });
+
+/*
+  Virtual Field for comments
+  i.e. review.comments
+*/
+// Find comments where the store's _id property === comments store id property
+reviewSchema.virtual('comments', {
+  ref: 'Comment', // Which model to link?
+  localField: '_id', // which field on the review (current)?
+  foreignField: 'review' // which field on the comment (The comment model)?
+});
+
+function autopopulateComments(next) {
+  this.populate('comments');
+  next();
+}
+
+reviewSchema.pre('find', autopopulateComments);
+reviewSchema.pre('findOne', autopopulateComments);
 
 module.exports = mongoose.model('Review', reviewSchema);

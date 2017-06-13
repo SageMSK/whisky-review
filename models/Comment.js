@@ -10,9 +10,10 @@ const commentSchema = new mongoose.Schema({
     type: String,
     required: 'Must have text.'
   },
-  store: {
+  review: {
+    ref: 'Review',
     type: mongoose.Schema.ObjectId,
-    required: 'Must have a store connected.'
+    required: 'Must have a review connected.'
   },
   created: {
     type: Date,

@@ -1,5 +1,8 @@
 extends layout
 
+include mixins/_commentForm
+include mixins/_comment
+
 block content
   .review
     .review__header
@@ -11,7 +14,7 @@ block content
           a.button.review__button.delete(href=`/whisky/${review._id}/delete`) Delete
       
       p.review__author By #{review.author.firstName} at 
-        span.review__date #{h.moment(review.created).format("MMMM Mo YYYY, h:mm a")}
+        span.review__date #{h.moment(review.created).format("MMMM Mo YYYY, h:mm a")} PT
     
     .review__image-aside
       img(src=`/uploads/${review.photo || ''}`, alt=`${review.name}`, title=`${review.name}`)
@@ -42,3 +45,8 @@ block content
     .review__comment-section
       h2 Comment Below:
       p Coming soon...
+      if user
+        +commentForm(review)
+
+      if review.comments
+        p loaded comments

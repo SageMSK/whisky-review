@@ -30,7 +30,9 @@ exports.getReviews = async (req, res) => {
 };
 
 exports.getReviewBySlug = async (req, res, next) => {
-  const review = await Review.findOne({ slug: req.params.slug }).populate('author');
+  // populate the author's object to show user's info
+  // populate comments for adding comment virtual model in the review's schema/model
+  const review = await Review.findOne({ slug: req.params.slug }).populate('author comments');
   if (!review) return next();
 
   res.render('whisky', {
@@ -41,7 +43,7 @@ exports.getReviewBySlug = async (req, res, next) => {
 
 exports.getAboutPage = (req, res) => {
   res.render('about', {
-    title: 'About'
+    title: 'About WhiskyPark'
   })
 };
 
