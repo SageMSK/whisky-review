@@ -21,6 +21,7 @@ mongoose.connection.once('open', () => {
 // MongoDB/Mongoose Schema Singletons
 require('./models/Review');
 require('./models/User');
+require('./models/Comment');
 
 // Starting our app
 const app = require('./app');
