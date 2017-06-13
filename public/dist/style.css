@@ -699,8 +699,27 @@ label {
       background: #d2d2d2; }
   .review__comment-section {
     margin-top: 50px;
-    padding: 5px;
-    border: 2px solid #a3a3a3; }
+    padding: 15px;
+    border: 2px solid #d2d2d2; }
+  .review .comment-box {
+    position: relative;
+    border: 1px solid #d2d2d2;
+    padding: 25px;
+    margin: 10px 0; }
+    .review .comment-box__header {
+      padding-left: 5px;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #d2d2d2; }
+    .review .comment-box__message {
+      margin-bottom: 25px; }
+    .review .comment-box__date-flex {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+      font-size: 0.9rem;
+      color: #a3a3a3; }
 
 /* Small screens */
 @media all and (max-width: 500px) {
@@ -743,6 +762,16 @@ label {
 .underline {
   margin-top: 25px;
   width: 100px; }
+
+.commentForm {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #d2d2d2; }
+  .commentForm__textarea {
+    width: 100%;
+    height: 100px; }
+  .commentForm__button {
+    margin-top: 5px; }
 
 .password-reset-form {
   max-width: 500px;

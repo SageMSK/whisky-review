@@ -30,7 +30,8 @@ block content
         p.review__description-notes #{review.description}
 
       .review__details
-        p.review__details--title Tasting Notes 
+        p.review__details--title
+          strong Tasting Notes 
 
         p.review__details--msg
           strong Nose: 
@@ -43,10 +44,12 @@ block content
           | : #{review.finish}
 
     .review__comment-section
-      h2 Comment Below:
-      p Coming soon...
+      h2 Comments:
       if user
         +commentForm(review)
 
       if review.comments
-        p loaded comments
+        .review__comments
+          each comment in review.comments
+            .review__comment
+              +commentBox(comment)

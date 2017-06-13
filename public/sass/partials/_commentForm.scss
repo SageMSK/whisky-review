@@ -1,0 +1,14 @@
+.commentForm {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid $light-grey;
+
+  &__textarea {
+    width: 100%;
+    height: 100px;
+  }
+
+  &__button {
+    margin-top: 5px;
+  }
+}
