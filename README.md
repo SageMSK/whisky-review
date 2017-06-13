@@ -1,4 +1,4 @@
-# Whisky Review Website
+# Whisky Review Website (Whiskypark)
 
-Hosted on heroku: [https://whiskyreviewer.herokuapp.com/](https://whiskyreviewer.herokuapp.com/)
+Hosted on heroku: [https://whiskypark.herokuapp.com/](https://whiskypark.herokuapp.com/)
 
