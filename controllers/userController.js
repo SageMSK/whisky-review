@@ -91,12 +91,16 @@ exports.createUser = async (req, res, next) => {
   next();
 };
 
-exports.getAccountPage = async (req, res) => {
-  // const username = req.params.username;
-  // const user = await User.findOne({ username });
+exports.getAccountPage = async (req, res, next) => {
+  const username = req.params.username;
+  const user = await User.findOne({ username });
+  if (!user) {
+    return next(); // Throw 404 Error
+  }
 
   res.render('account', { 
     title: 'Profile',
+    searchedUser: user
   });
 };
 
