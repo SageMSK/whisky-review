@@ -27,7 +27,7 @@ html
                   div.nav__link.dropdowndiv
                     img.dropbtn.avatar(src=user.gravatar + 'd=retro')
                   #myDropdown.dropdown__content
-                    a.dropdown__link(href="/user") Account
+                    a.dropdown__link(href=`/user/${user.username}`) My Profile
                     a.dropdown__link.logout(href="/logout") Log Out
             else
               li.nav__item

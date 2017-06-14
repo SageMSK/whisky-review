@@ -15,6 +15,8 @@ exports.registrationPage = (req, res) => {
 };
 
 exports.validateRegister = (req, res, next) => {
+  req.sanitizeBody('username');
+  req.checkBody('username', 'You must enter an available username.').notEmpty();
   req.sanitizeBody('firstName');
   req.checkBody('firstName', 'You must enter your first name.').notEmpty();
   req.sanitizeBody('lastName');
@@ -46,18 +48,41 @@ exports.validateRegister = (req, res, next) => {
 
 exports.createUser = async (req, res, next) => {
   const email = req.body.email;
+  const username = req.body.username;
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
 
   // Check is user/email is already in use or exists.
-  const findUserFirst = await User.findOne({ email });
-  if (findUserFirst) {
-    req.flash('error', 'Email already in use.');
-    res.redirect('/register');
-    return;
+  const findUserFirstByEmail = User.findOne({ email });
+  const findUserFirstByUsername = User.findOne({ username });
+
+  const [ userMail, userUsername ] = await Promise.all([ findUserFirstByEmail, findUserFirstByUsername ])
+
+  // check if user exists by email
+  if (userMail) {
+    // check if email exists
+    if (userMail.email === email) {
+      console.log('ERROR: Found an email in use already.');
+      console.log(`userMail's email: ${userMail.email}`);
+      req.flash('error', 'Email already in use.');
+      res.redirect('/register');
+      return;
+    }
   }
 
-  const newUser = new User({ email, firstName, lastName });
+  // check if user exists by username
+  if (userUsername) {
+    // check if username exists
+    if (userUsername.username === username) {
+      console.log('ERROR: Found the username in use already.');
+      console.log(`userUsername's username: ${userUsername.username}`);
+      req.flash('error', 'Username already taken.');
+      res.redirect('/register');
+      return;
+    }
+  }
+
+  const newUser = new User({ email, username, firstName, lastName });
   // Not save but register because passportlocalMongoose gives us a method: register
   // Problem: register doesn't return a promise.
   const register = promisify(User.register, User); 
@@ -66,8 +91,13 @@ exports.createUser = async (req, res, next) => {
   next();
 };
 
-exports.getUserPage = (req, res) => {
-  res.render('account', { title: 'Profile' });
+exports.getAccountPage = async (req, res) => {
+  // const username = req.params.username;
+  // const user = await User.findOne({ username });
+
+  res.render('account', { 
+    title: 'Profile',
+  });
 };
 
 exports.updateUserInfo = async (req, res) => {

@@ -19,7 +19,7 @@ router.get('/whisky/:id/edit', catchAsyncErrors(reviewController.showEditPage));
 router.get('/login', userController.loginPage);
 router.get('/register', userController.registrationPage);
 router.get('/logout', authController.logout);
-router.get('/user', authController.requireUser, userController.getUserPage);
+router.get('/user/:username', catchAsyncErrors(userController.getAccountPage));
 router.get('/password_reset', authController.getResetPasswordPage);
 router.get('/user/reset/:token', catchAsyncErrors(authController.getPasswordPage));
 router.get('/whisky/:id/delete', catchAsyncErrors(reviewController.deleteReviewPage));

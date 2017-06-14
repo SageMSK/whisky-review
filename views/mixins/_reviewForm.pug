@@ -15,9 +15,9 @@ mixin reviewForm(review = {})
         input(type="number" name="amount" min="1" placeholder="Amount, i.e. 750ml" value=review.amount)
 
     //- Upload Images
-    label(for="photo") Images
+    label(for="photo") Photo
       input(type="file" name="photo" id="photo" accept="image/gif, image/png, image/jpeg")
-      if (review.photo)
+      if review.photo
         img(src=`/uploads/${review.photo}`, alt=review.name, title=review.name, width=200)
 
     label(for="rating") Rate
