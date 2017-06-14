@@ -4,7 +4,7 @@ block content
   h2.title= title
 
   //- Only shows if user is logged in. Public can't see this
-  if user.username === searchedUser.username
+  if user && user.username === searchedUser.username
     form(action=`/user` method="POST")
       label(for="firstName") First Name
       input(type="text" name="firstName" value=user.firstName)
