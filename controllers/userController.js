@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const User = mongoose.model('User');
+const Review = mongoose.model('Review');
 const promisify = require('es6-promisify');
 
 exports.loginPage = (req, res) => {
@@ -93,14 +94,20 @@ exports.createUser = async (req, res, next) => {
 
 exports.getAccountPage = async (req, res, next) => {
   const username = req.params.username;
+  // Find the searched User
   const searchedUser = await User.findOne({ username });
+
+  // Find the search User's reviews
+  const searchedUserReviews = await Review.find({ author: searchedUser._id });
+  
   if (!searchedUser) {
     return next(); // Throw 404 Error
   }
 
   res.render('account', { 
     title: 'Profile',
-    searchedUser
+    searchedUser,
+    searchedUserReviews
   });
 };
 

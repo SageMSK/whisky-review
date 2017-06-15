@@ -1,18 +1,27 @@
 extends layout
 
 block content
-  h2.title= title
+  .account-page
+    h2.title #{searchedUser.username}'s #{title}
 
-  //- Only shows if user is logged in. Public can't see this
-  if user && user.username === searchedUser.username
-    form(action=`/user` method="POST")
-      label(for="firstName") First Name
-      input(type="text" name="firstName" value=user.firstName)
+    //- Only shows if user is logged in. Public can't see this
+    if user && user.username === searchedUser.username
+      form.account-page__userform(action=`/user` method="POST")
+        label(for="firstName") First Name
+        input(type="text" name="firstName" value=user.firstName)
 
-      label(for="lastName") Last Name
-      input(type="text" name="lastName" value=user.lastName)
+        label(for="lastName") Last Name
+        input(type="text" name="lastName" value=user.lastName)
 
-      label(for="email") Email
-      input(type="text" name="email" value=user.email)
+        label(for="email") Email
+        input(type="text" name="email" value=user.email)
 
-      input.button(type="submit" value="Update Information")
+        input.button(type="submit" value="Update Information")
+
+    .whisky-list
+      h2.whisky-list__title #{searchedUser.username}'s whisky reviews
+      ul.whisky-list__whiskies
+        each whisky in searchedUserReviews
+          li.whisky-list__whisky
+            //- Limit to 8 words
+            a.whisky-list__whisky--link(href=`/whisky/${whisky.slug}` title=`${whisky.name}`) #{whisky.name.split(' ').slice(0, 8).join(' ')}
