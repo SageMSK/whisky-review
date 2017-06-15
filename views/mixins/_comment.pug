@@ -1,6 +1,8 @@
 mixin commentBox(review)
   .comment-box
-    h3.comment-box__header #{review.author.username}
+    - var author = review.author ? review.author.username : 'unknown'
+    - var owner = review.author.username ? 'You' : ''
+    h3.comment-box__header #{author}
     p.comment-box__message #{review.message}
     .comment-box__date-flex
       p.comment-box__date #{h.moment(review.created).format("MMMM Mo YYYY, h:mm a")}

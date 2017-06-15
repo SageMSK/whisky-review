@@ -17,6 +17,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     trim: true,
     unique: true,
+    lowercase: true,
     required: 'Please enter an available username.'
   },
   firstName: {

@@ -120,4 +120,3 @@ exports.updateUserInfo = async (req, res) => {
   req.flash('success', 'Your profile information has been updated.');
   res.redirect('/user');
 };
-

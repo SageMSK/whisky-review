@@ -53,11 +53,13 @@ router.post('/user/reset/:token',
   authController.confirmNewPasswords,
   catchAsyncErrors(authController.updateNewPassword)
 );
-// Really don't want to use POST but will change to AJAX DELETE method
+// Really don't want to use POST. Will change to AJAX DELETE method
 router.post('/whisky/:id/delete', catchAsyncErrors(reviewController.deleteReview));
 router.post('/comments/:id',
   authController.requireUser,
   catchAsyncErrors(commentController.addComment)
 );
+// Delete comment...soon
+router.get('/comments/:id',commentController.deleteComment);
 
 module.exports = router;

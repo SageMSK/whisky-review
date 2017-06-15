@@ -9,3 +9,7 @@ exports.addComment = async (req, res) => {
   req.flash('success', 'Comment posted');
   res.redirect('back');
 };
+
+exports.deleteComment = (req, res) => {
+  console.log('Server received action.');
+};

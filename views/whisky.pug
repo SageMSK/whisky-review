@@ -9,12 +9,14 @@ block content
       a.back-to-index(href="/whiskies") Back to Whiskies
       p.review__title #{review.name}
         span.review__bottle-details (#{review.abv}% / #{review.amount}ml)
-        if user && review.author.equals(user._id)
+        - var author = review.author ? review.author.equals(user._id) : false
+        if user && author
           a.button.review__button(href=`/whisky/${review._id}/edit`) Edit
           a.button.review__button.delete(href=`/whisky/${review._id}/delete`) Delete
       
-      p.review__author By #{review.author.firstName} at 
-        span.review__date #{h.moment(review.created).format("MMMM Mo YYYY, h:mm a")} PT
+        - var author = review.author ? review.author.username : 'unknown'
+        p.review__author By #{author} at 
+          span.review__date #{h.moment(review.created).format("MMMM Mo YYYY, h:mm a")} PT
     
     .review__image-aside
       img(src=`/uploads/${review.photo || ''}`, alt=`${review.name}`, title=`${review.name}`)
