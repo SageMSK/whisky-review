@@ -8,4 +8,5 @@ Hosted on heroku: [https://whiskypark.herokuapp.com/](https://whiskypark.herokua
 - ~~fix the profile/account page as well~~
 - add the ability to like/favorite reviews and keep them on like/favorite list
 - ability to remove their own comment on whiskies
-- Re-design the entire website
+- Re-design the look of the website
+- responsive design for mobile/tablet

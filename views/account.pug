@@ -6,7 +6,8 @@ block content
       h2.account-page__title #{searchedUser.username}'s #{title}
       hr.account-page__underline
 
-    //- Only shows if user is logged in. Public can't see this
+    //- Public users can't see this.
+    //- Only shows if user is logged in and it matches the user's profile page
     if user && user.username === searchedUser.username
       form.account-page__userform(action=`/user` method="POST")
         h4 Update User Profile

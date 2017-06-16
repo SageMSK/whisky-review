@@ -10,7 +10,11 @@ block content
       p.review__title #{review.name}
         span.review__bottle-details (#{review.abv}% / #{review.amount}ml)
 
+        //- This is needed because if user's account is deleted
+        //- it will throw an error: can't find username of null
+        //- so find the user first
         if user
+          //- check if the user logged in matches the review's author
           - var author = review.author ? review.author.equals(user._id) : false
           if author
             a.button.review__button(href=`/whisky/${review._id}/edit`) Edit

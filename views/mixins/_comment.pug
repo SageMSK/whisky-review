@@ -1,5 +1,7 @@
 mixin commentBox(review)
   .comment-box
+    //- This is needed because if user's account is deleted
+    //- it will throw an error: can't find username of null
     - var author = review.author ? review.author.username : 'unknown'
     h3.comment-box__header #{author}
     p.comment-box__message #{review.message}

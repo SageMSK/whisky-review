@@ -1,6 +1,8 @@
 extends layout
 
 block content
-  h2.title= status
-  p= message
-  pre.error!= stackHighlighted
+  .error-page
+    h2.title= status
+    p= message
+    a.error-page__link(href="/") Back Home
+    pre.error!= stackHighlighted
