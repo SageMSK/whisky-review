@@ -612,6 +612,42 @@ label {
   .about__link:hover {
     color: #1851ad; }
 
+.account-page {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap; }
+  .account-page__header {
+    -ms-flex: 1 100%;
+        flex: 1 100%; }
+  .account-page__title {
+    padding: 10px;
+    margin: 10px 0; }
+  .account-page__underline {
+    border: none;
+    border-bottom: 1px solid #d2d2d2; }
+  .account-page__userform {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #d2d2d2;
+    border-radius: 5px;
+    -ms-flex: 1 auto;
+        flex: 1 auto;
+    width: 250px; }
+  .account-page .whisky-list {
+    padding: 10px;
+    -ms-flex: 1 auto;
+        flex: 1 auto; }
+    .account-page .whisky-list__title {
+      padding: 5px; }
+    .account-page .whisky-list__whisky--link {
+      margin-top: 1px;
+      border: 1px solid #d2d2d2;
+      padding: 20px;
+      width: 100%; }
+      .account-page .whisky-list__whisky--link:hover {
+        background-color: #d2d2d2; }
+
 .whisky__button {
   margin: 0;
   margin-left: 15px;

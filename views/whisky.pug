@@ -9,10 +9,12 @@ block content
       a.back-to-index(href="/whiskies") Back to Whiskies
       p.review__title #{review.name}
         span.review__bottle-details (#{review.abv}% / #{review.amount}ml)
-        - var author = review.author ? review.author.equals(user._id) : false
-        if user && author
-          a.button.review__button(href=`/whisky/${review._id}/edit`) Edit
-          a.button.review__button.delete(href=`/whisky/${review._id}/delete`) Delete
+
+        if user
+          - var author = review.author ? review.author.equals(user._id) : false
+          if author
+            a.button.review__button(href=`/whisky/${review._id}/edit`) Edit
+            a.button.review__button.delete(href=`/whisky/${review._id}/delete`) Delete
       
         - var author = review.author ? review.author.username : 'unknown'
         p.review__author By #{author} at 

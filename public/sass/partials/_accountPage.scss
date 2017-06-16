@@ -1,8 +1,47 @@
 .account-page {
-  //
+  display: flex;
+  flex-flow: row wrap;
 
+  &__header {
+    flex: 1 100%;
+  }
+
+  &__title {
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  &__underline {
+    border: none;
+    border-bottom: 1px solid $light-grey;
+  }
+
+  &__userform {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid $light-grey;
+    border-radius: 5px;
+    flex: 1 auto;
+    width: 250px;
+  }
 
   .whisky-list {
-    //
+    padding: 10px;
+    flex: 1 auto;
+
+    &__title {
+      padding: 5px;
+    }
+
+    &__whisky--link {
+      margin-top: 1px;
+      border: 1px solid $light-grey;
+      padding: 20px;
+      width: 100%;
+
+      &:hover {
+        background-color: $light-grey;
+      }
+    }
   }
 }

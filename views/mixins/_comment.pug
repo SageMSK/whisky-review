@@ -1,7 +1,6 @@
 mixin commentBox(review)
   .comment-box
     - var author = review.author ? review.author.username : 'unknown'
-    - var owner = review.author.username ? 'You' : ''
     h3.comment-box__header #{author}
     p.comment-box__message #{review.message}
     .comment-box__date-flex
