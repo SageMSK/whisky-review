@@ -10,3 +10,6 @@ Hosted on heroku: [https://whiskypark.herokuapp.com/](https://whiskypark.herokua
 - ability to remove their own comment on whiskies
 - Re-design the look of the website
 - responsive design for mobile/tablet
+
+Preview of Main Page
+![whiskypark](http://i.imgur.com/51bJKXG.png)
