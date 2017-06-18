@@ -641,8 +641,7 @@ label {
     .account-page .whisky-list__title {
       padding: 5px; }
     .account-page .whisky-list__whisky--link {
-      margin-top: 1px;
-      border: 1px solid #d2d2d2;
+      border-bottom: 1px solid #d2d2d2;
       padding: 20px;
       width: 100%; }
       .account-page .whisky-list__whisky--link:hover {
@@ -751,6 +750,22 @@ label {
       padding-bottom: 5px;
       margin-bottom: 15px;
       border-bottom: 1px solid #d2d2d2; }
+    .review .comment-box__form {
+      position: absolute;
+      right: 0;
+      top: 0; }
+    .review .comment-box__button {
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 5px;
+      border-radius: 5px;
+      color: white;
+      border: none;
+      margin: 5px;
+      cursor: pointer; }
+      .review .comment-box__button :hover {
+        color: #ff4f4f; }
     .review .comment-box__message {
       margin-bottom: 25px; }
     .review .comment-box__date-flex {

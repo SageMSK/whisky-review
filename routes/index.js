@@ -60,6 +60,9 @@ router.post('/comments/:id',
   catchAsyncErrors(commentController.addComment)
 );
 // Delete comment...soon
-router.get('/comments/:id',commentController.deleteComment);
+// router.delete('/comments/:id',
+//   authController.requireUser,
+//   catchAsyncErrors(commentController.deleteComment)
+// );
 
 module.exports = router;

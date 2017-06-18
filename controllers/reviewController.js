@@ -130,8 +130,6 @@ exports.deleteReview = async (req, res) => {
     return res.redirect('back');
   }
 
-  console.log(req.body.slug);
-
   if (review.slug !== req.body.slug) {
     req.flash('error', "Review name does not match.");
     return res.redirect('back');

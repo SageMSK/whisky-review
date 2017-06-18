@@ -10,6 +10,17 @@ exports.addComment = async (req, res) => {
   res.redirect('back');
 };
 
-exports.deleteComment = (req, res) => {
+exports.deleteComment = async (req, res) => {
   console.log('Server received action.');
+  // find the comment
+  const comment = await Comment.findOne({ _id: req.params.id });
+  if (!comment) {
+    req.flash('error', 'Comment does not exists or has been deleted.');
+    return res.redirect('back');
+  }
+
+  await comment.remove();
+
+  req.flash('success', "Your comment has been deleted.");
+  res.redirect('back');
 };
