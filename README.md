@@ -13,4 +13,7 @@ Hosted on heroku: [https://whiskypark.herokuapp.com/](https://whiskypark.herokua
 - ~~responsive design for mobile/tablet~~
 
 Preview of Main Page
-![whiskypark](http://i.imgur.com/Kp2hEGB.png)
+![whiskypark](http://i.imgur.com/wREH4Vq.png)
+
+Preview of a review page
+![whiskypark-review](http://i.imgur.com/nOIqDU7.png)

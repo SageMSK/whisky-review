@@ -1,4 +1,4 @@
 mixin commentForm(review)
   form.commentForm(action=`/comments/${review._id}` method="POST")
-    textarea.commentForm__textarea(name="message" placeholder="Care to leave a comment?")
-    input.button.commentForm__button(type="submit" value="Comment")
+    textarea.commentForm__textarea(name="message")
+    input.button.commentForm__button(type="submit" value="Submit")
