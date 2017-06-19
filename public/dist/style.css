@@ -630,7 +630,7 @@ label {
     margin: 10px 0; }
   .account-page__underline {
     border: none;
-    border-bottom: 1px solid #d2d2d2; }
+    border-bottom: 1px solid #353535; }
   .account-page__userform {
     margin: 10px;
     padding: 10px;
@@ -647,12 +647,12 @@ label {
     .account-page .whisky-list__title {
       padding: 5px; }
     .account-page .whisky-list__whisky--link {
-      border-bottom: 1px solid #a3a3a3;
+      border-bottom: 1px solid #353535;
       padding: 20px;
       width: 100%;
       border-radius: 2px; }
       .account-page .whisky-list__whisky--link:hover {
-        background-color: #d2d2d2; }
+        background-color: #b57500; }
 
 .whisky__button {
   margin: 0;
@@ -707,7 +707,7 @@ label {
     padding: 10px;
     height: 350px;
     width: auto;
-    border-radius: 2px; }
+    border-radius: 12px; }
   .review__info-section {
     display: -ms-flexbox;
     display: flex;
@@ -719,12 +719,12 @@ label {
     position: relative;
     padding-left: 3px;
     font-size: 1.1rem;
-    bottom: 3px;
+    bottom: 2px;
     color: #b2651c; }
   .review__description {
     margin: 20px 0; }
   .review__details {
-    border: 2px solid #a3a3a3;
+    border: 2px solid #875900;
     border-radius: 2px;
     padding: 13px; }
     .review__details--msg {

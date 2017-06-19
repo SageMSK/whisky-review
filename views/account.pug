@@ -11,7 +11,7 @@ block content
     if user && user.username === searchedUser.username
       form.account-page__userform(action=`/user` method="POST")
         h4 Update User Profile
-        hr.account-page__underline
+        hr
 
         label(for="firstName") First Name
         input(type="text" name="firstName" value=user.firstName)

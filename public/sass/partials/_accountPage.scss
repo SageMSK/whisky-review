@@ -13,7 +13,7 @@
 
   &__underline {
     border: none;
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid $light-black;
   }
 
   &__userform {
@@ -35,13 +35,13 @@
     }
 
     &__whisky--link {
-      border-bottom: 1px solid $grey;
+      border-bottom: 1px solid $light-black;
       padding: 20px;
       width: 100%;
       border-radius: 2px;
 
       &:hover {
-        background-color: $border-color;
+        background-color: $secondary-hover;
       }
     }
   }
