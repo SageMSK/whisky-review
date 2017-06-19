@@ -15,14 +15,14 @@ block content
         //- so find the user first
         if user
           //- check if the user logged in matches the review's author
-          - var author = review.author ? review.author.equals(user._id) : false
+          - const author = review.author ? review.author.equals(user._id) : false
           if author
             a.button.review__button(href=`/whisky/${review._id}/edit`)
               i.fa.fa-pencil-square-o(aria-hidden='true')
             a.button.review__button.delete(href=`/whisky/${review._id}/delete`)
               i.fa.fa-trash-o(aria-hidden='true')
       
-        - var author = review.author ? review.author.username : 'unknown'
+        - const author = review.author ? review.author.username : 'unknown'
         p.review__author By #{author} at 
           span.review__date #{h.moment(review.created).format("MMMM Mo YYYY, h:mm a")} PT
     

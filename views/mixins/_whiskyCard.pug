@@ -1,7 +1,7 @@
 mixin whiskyCard(review = {})
   .whiskycard
     a(href=`/whisky/${review.slug}`)
-      img.whiskycard__img(src=`/uploads/${review.photo || ''}` alt=`${review.name || 'Need Image'}` title=`${review.name || 'Need Image'}`)
+      img.whiskycard__img(src=`/uploads/${review.photo || ''}` alt=`${review.name || 'Needs Image'}` title=`${review.name || 'Needs Image'}`)
     .whiskycard__info
       h3.whiskycard__title
         a(href=`/whisky/${review.slug}`) #{review.name}

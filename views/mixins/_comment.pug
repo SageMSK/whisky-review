@@ -2,7 +2,7 @@ mixin commentBox(review)
   .comment-box
     //- This is needed because if user's account is deleted
     //- it will throw an error: can't find username of null
-    - var author = review.author ? review.author.username : 'unknown'
+    - const author = review.author ? review.author.username : 'unknown'
     h3.comment-box__header #{author}
     //- if author
       form#comment-box__form.comment-box__form(action=`/comments/${review._id}`)
