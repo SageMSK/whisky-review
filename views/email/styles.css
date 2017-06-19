@@ -1,6 +1,6 @@
 body {
   font-family: sans-serif;
-  background-color: rgb(210, 210, 210);
+  background-color: rgb(255, 218, 145);
   font-size: 14px;
 }
 
@@ -29,8 +29,4 @@ body {
   color: black;
   border: none;
   border-radius: 2px;
-}
-
-.email-password-reset__button:hover {
-  background-color: rgb(242, 209, 48);
 }

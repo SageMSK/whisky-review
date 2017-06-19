@@ -7,9 +7,9 @@ const authController = require('./../controllers/authController');
 const commentController = require('./../controllers/commentController');
 const { catchAsyncErrors } = require('./../services/errorHandlers');
 
-/*
+/* =====================
   GET Methods for fetching pages
-*/
+  ===================== */
 router.get('/', catchAsyncErrors(reviewController.getReviews));
 router.get('/whiskies', catchAsyncErrors(reviewController.getReviews));
 router.get('/whisky/:slug', catchAsyncErrors(reviewController.getReviewBySlug));
@@ -25,9 +25,9 @@ router.get('/user/reset/:token', catchAsyncErrors(authController.getPasswordPage
 router.get('/whisky/:id/delete', catchAsyncErrors(reviewController.deleteReviewPage));
 
 
-/*
-  POST Methods
-*/
+/* =====================
+      POST Methods
+  ===================== */
 router.post('/add',
   reviewController.uploadImage,
   catchAsyncErrors(reviewController.resizeImage),
@@ -55,6 +55,16 @@ router.post('/user/reset/:token',
 );
 // Really don't want to use POST. Will change to AJAX DELETE method
 router.post('/whisky/:id/delete', catchAsyncErrors(reviewController.deleteReview));
+
+// Favorite reviews: toggle
+router.post('/whisky/:id/favorite', 
+  authController.requireUser,
+  catchAsyncErrors(reviewController.favoriteReview)
+);
+
+/*
+  Comments
+*/
 router.post('/comments/:id',
   authController.requireUser,
   catchAsyncErrors(commentController.addComment)

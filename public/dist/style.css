@@ -519,7 +519,6 @@ label {
 .nav {
   padding: 0;
   margin: 0 auto;
-  max-width: 1200px;
   display: -ms-flexbox;
   display: flex;
   font-size: 18px;
@@ -532,13 +531,15 @@ label {
     .nav__section--pages {
       -ms-flex-pack: end;
           justify-content: flex-end; }
+  .nav .brand {
+    padding: 20px 10px; }
   .nav__item {
     display: -ms-flexbox;
     display: flex; }
   .nav__link {
     display: -ms-flexbox;
     display: flex;
-    padding: 20px;
+    padding: 20px 15px;
     -ms-flex-item-align: center;
         align-self: center;
     color: #fff; }
@@ -652,7 +653,7 @@ label {
       width: 100%;
       border-radius: 2px; }
       .account-page .whisky-list__whisky--link:hover {
-        background-color: #b57500; }
+        background-color: #ffc04c; }
 
 .whisky__button {
   margin: 0;
@@ -694,6 +695,20 @@ label {
     -ms-flex: 1 auto;
         flex: 1 auto;
     padding: 5px; }
+  .review__favorite {
+    display: -ms-flexbox;
+    display: flex; }
+    .review__favorite .favorite-button {
+      background: none;
+      border: none;
+      position: relative;
+      bottom: 5px;
+      padding-left: 10px;
+      color: #353535;
+      font-size: 1.4rem;
+      cursor: pointer; }
+      .review__favorite .favorite-button--favorited {
+        color: #ff1414; }
   .review__title {
     margin-top: 24px;
     font-size: 1.6rem; }
@@ -743,7 +758,8 @@ label {
     padding: 5px;
     margin-top: 5px; }
     .review .back-to-index:hover {
-      background: #a3a3a3; }
+      background: #875900;
+      color: #fff; }
   .review__comment-section {
     margin-top: 50px;
     padding: 15px;

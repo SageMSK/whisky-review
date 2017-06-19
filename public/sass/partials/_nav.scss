@@ -6,7 +6,6 @@
 .nav {
   padding: 0;
   margin: 0 auto;
-  max-width: 1200px;
   display: flex;
   font-size: 18px;
   list-style: none;
@@ -20,13 +19,17 @@
     }
   }
 
+  .brand {
+    padding: 20px 10px;
+  }
+
   &__item {
     display: flex;
   }
 
   &__link {
     display: flex;
-    padding: 20px;
+    padding: 20px 15px;
     align-self: center;
     color: $white;
     

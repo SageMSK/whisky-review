@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Review = mongoose.model('Review');
+const User = mongoose.model('User');
 const multer = require('multer');
 const jimp = require('jimp');
 const uuid = require('uuid');
@@ -139,4 +140,22 @@ exports.deleteReview = async (req, res) => {
 
   req.flash('success', "Your whisky review has been deleted.");
   res.redirect('/whiskies');
+};
+
+/*
+  Toggle: Favorite review
+*/
+exports.favoriteReview = async (req, res) => {
+  // 1. Find list of reviews
+  // Get it from the logged in user
+  const favoritedReviews = req.user.favorites.map(objId => objId.toString());
+  // 2. check if the review is in the list/array
+  // If so, add it, if not, remove it.
+  const operator = favoritedReviews.includes(req.params.id) ? '$pull' : '$addToSet';
+  // 3. Add or remove the review from the list
+  const user = await User.findByIdAndUpdate(req.user._id, 
+    { [operator]: { favorites: req.params.id } },
+    { new: true }
+  );
+  res.json(user);
 };

@@ -30,6 +30,12 @@ const userSchema = new mongoose.Schema({
     trim: true,
     required: 'Please provide your last name.'
   },
+  favorites: [
+    {
+      type: mongoose.Schema.ObjectId,
+      ref: 'Review'
+    }
+  ],
   resetPasswordToken: String,
   resetPasswordExpires: Date
 });
