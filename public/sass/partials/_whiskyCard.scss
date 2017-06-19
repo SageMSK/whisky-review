@@ -2,10 +2,11 @@
   margin: 10px;
   width: 250px;
   text-align: center;
-  border: 1px solid $light-grey;
+  border: 1px solid $border-color;
   -webkit-box-shadow: 1px 1px 10px -5px rgba(0,0,0,0.75);
   -moz-box-shadow: 1px 1px 10px -5px rgba(0,0,0,0.75);
   box-shadow: 1px 1px 10px -5px rgba(0,0,0,0.75);
+  background-color: $white;
 
   &__img {
     height: 180px;

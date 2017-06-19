@@ -1,7 +1,7 @@
 .footer {
   margin-top: 25px;
-  background: rgb(53, 53, 53);
-  color: white;
+  background-color: $secondary-lighter;
+  color: $white;
   text-align: center;
 
   &__upper {
@@ -10,7 +10,7 @@
 
   &__lower {
     font-size: 0.8rem;
-    background: rgb(30, 30, 30);
+    background-color: $secondary-darker;
     padding: 15px;
   }
 
@@ -20,7 +20,7 @@
   }
 
   .fa {
-    color: white;
+    color: $white;
     font-size: 1.7rem;
   }
 

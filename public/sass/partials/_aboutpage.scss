@@ -6,10 +6,10 @@
 
   &__link {
     display: inline-block;
-    color: rgb(39, 107, 216);
+    color: $link-color;
 
     &:hover {
-      color: rgb(24, 81, 173);
+      color: $link-color-hover;
     }
   }
 }

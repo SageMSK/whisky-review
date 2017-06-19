@@ -1,5 +1,6 @@
 .header {
-  box-shadow: 0 4px 2px -2px $light-grey;
+  background-color: $secondary-lighter;
+  box-shadow: 0 3px 1px -3px $light-black;
 }
 
 .nav {
@@ -27,14 +28,14 @@
     display: flex;
     padding: 20px;
     align-self: center;
+    color: $white;
     
     &:hover {
-      background: $light-grey;
+      background: $secondary-hover;
     }
 
     &--active {
-      background-color: $light-grey;
-      color: white;
+      background-color: $secondary-hover;
     }
   }
 
@@ -64,7 +65,7 @@
       min-width: 150px;
       z-index: 1;
       right: 0;
-      border: 1px solid $light-grey;
+      border: 1px solid $border-color;
     }
 
     &__link {

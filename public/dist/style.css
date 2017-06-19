@@ -1,3 +1,6 @@
+/* 
+  Main Color  
+*/
 html {
   box-sizing: border-box; }
 
@@ -415,7 +418,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Raleway', sans-serif;
-  font-size: 16px; }
+  font-size: 16px;
+  background-color: #ffda91; }
 
 ul {
   list-style: none;
@@ -428,7 +432,7 @@ h2, h3, h4, h5, h6, p {
 a {
   display: block;
   text-decoration: none;
-  color: black; }
+  color: #1e1e1e; }
 
 .title {
   margin: 25px 0; }
@@ -450,7 +454,7 @@ a {
 
 .button {
   border: none;
-  color: white;
+  color: #fff;
   font-size: 20px;
   background: #f2d130;
   margin-top: 20px;
@@ -473,7 +477,7 @@ a {
  */
 .form {
   margin: 50px auto 50px auto;
-  background: white;
+  background: #fff;
   border: 1px solid #d2d2d2;
   border-radius: 5px;
   box-shadow: 1px 2px 13px -5px rgba(0, 0, 0, 0.75); }
@@ -490,13 +494,13 @@ input[type=text] {
   font-family: 'Raleway', sans-serif; }
 
 input::-webkit-input-placeholder {
-  color: #d2d2d2; }
+  color: #a3a3a3; }
 
 input:-ms-input-placeholder {
-  color: #d2d2d2; }
+  color: #a3a3a3; }
 
 input::placeholder {
-  color: #d2d2d2; }
+  color: #a3a3a3; }
 
 label {
   padding: 10px 0;
@@ -509,7 +513,8 @@ label {
         justify-content: center; } }
 
 .header {
-  box-shadow: 0 4px 2px -2px #d2d2d2; }
+  background-color: #875900;
+  box-shadow: 0 3px 1px -3px #353535; }
 
 .nav {
   padding: 0;
@@ -535,12 +540,12 @@ label {
     display: flex;
     padding: 20px;
     -ms-flex-item-align: center;
-        align-self: center; }
+        align-self: center;
+    color: #fff; }
     .nav__link:hover {
-      background: #d2d2d2; }
+      background: #b57500; }
     .nav__link--active {
-      background-color: #d2d2d2;
-      color: white; }
+      background-color: #b57500; }
   .nav .dropdowndiv {
     padding: 5px; }
   .nav .avatar {
@@ -586,7 +591,7 @@ label {
     -ms-flex: 1;
         flex: 1;
     padding-left: 15px;
-    color: white;
+    color: #fff;
     font-weight: 600;
     padding: 15px 10px; }
   .flash__remove {
@@ -594,11 +599,11 @@ label {
     border: none; }
     .flash__remove:hover {
       font-size: 1.1rem;
-      color: yellow; }
+      color: #ffdb30; }
   .flash--success {
     background: #27d321; }
   .flash--info {
-    background: #fed136; }
+    background: #f2d130; }
   .flash--error {
     background: #ff1414; }
 
@@ -608,9 +613,9 @@ label {
 
 .about__link {
   display: inline-block;
-  color: #276bd8; }
+  color: #0aa0d2; }
   .about__link:hover {
-    color: #1851ad; }
+    color: #38c0ff; }
 
 .account-page {
   display: -ms-flexbox;
@@ -630,7 +635,8 @@ label {
     margin: 10px;
     padding: 10px;
     border: 1px solid #d2d2d2;
-    border-radius: 5px;
+    background-color: #fff;
+    border-radius: 2px;
     -ms-flex: 1 auto;
         flex: 1 auto;
     width: 250px; }
@@ -641,9 +647,10 @@ label {
     .account-page .whisky-list__title {
       padding: 5px; }
     .account-page .whisky-list__whisky--link {
-      border-bottom: 1px solid #d2d2d2;
+      border-bottom: 1px solid #a3a3a3;
       padding: 20px;
-      width: 100%; }
+      width: 100%;
+      border-radius: 2px; }
       .account-page .whisky-list__whisky--link:hover {
         background-color: #d2d2d2; }
 
@@ -658,7 +665,8 @@ label {
   width: 250px;
   text-align: center;
   border: 1px solid #d2d2d2;
-  box-shadow: 1px 1px 10px -5px rgba(0, 0, 0, 0.75); }
+  box-shadow: 1px 1px 10px -5px rgba(0, 0, 0, 0.75);
+  background-color: #fff; }
   .whiskycard__img {
     height: 180px; }
   .whiskycard__info {
@@ -735,11 +743,12 @@ label {
     padding: 5px;
     margin-top: 5px; }
     .review .back-to-index:hover {
-      background: #d2d2d2; }
+      background: #a3a3a3; }
   .review__comment-section {
     margin-top: 50px;
     padding: 15px;
-    border: 2px solid #d2d2d2; }
+    border: 2px solid #d2d2d2;
+    background-color: #fff; }
   .review .comment-box {
     position: relative;
     border: 1px solid #d2d2d2;
@@ -760,12 +769,12 @@ label {
       top: 0;
       padding: 5px;
       border-radius: 5px;
-      color: white;
+      color: #fff;
       border: none;
       margin: 5px;
       cursor: pointer; }
       .review .comment-box__button :hover {
-        color: #ff4f4f; }
+        color: #ff2b2b; }
     .review .comment-box__message {
       margin-bottom: 25px; }
     .review .comment-box__date-flex {
@@ -806,13 +815,15 @@ label {
     font-size: 12px;
     color: #0aa0d2;
     font-weight: 600; }
+    .userForm__forgot:hover {
+      color: #38c0ff; }
   .userForm__message {
     text-align: center; }
   .userForm__link {
     display: inline-block;
     color: #0aa0d2; }
     .userForm__link:hover {
-      color: #0096c9; }
+      color: #38c0ff; }
 
 .underline {
   margin-top: 25px;
@@ -842,26 +853,26 @@ label {
   .password-reset-form .cancel {
     text-align: center;
     font-weight: 500;
-    background: #e03e3e; }
+    background: #ff1414; }
     .password-reset-form .cancel:hover {
-      background: #ef4c4c; }
+      background: #ff2b2b; }
 
 .footer {
   margin-top: 25px;
-  background: #353535;
-  color: white;
+  background-color: #875900;
+  color: #fff;
   text-align: center; }
   .footer__upper {
     padding: 50px 0; }
   .footer__lower {
     font-size: 0.8rem;
-    background: #1e1e1e;
+    background-color: #593a00;
     padding: 15px; }
   .footer__socialmedia_list {
     list-style: none;
     padding: 0; }
   .footer .fa {
-    color: white;
+    color: #fff;
     font-size: 1.7rem; }
   .footer__socialmedia {
     display: inline-block;

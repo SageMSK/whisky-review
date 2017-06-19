@@ -3,6 +3,7 @@ body {
   padding: 0;
   font-family: 'Raleway', sans-serif;
   font-size: 16px;
+  background-color: $primary-amber;
 }
 
 ul {
@@ -18,7 +19,7 @@ h2, h3, h4, h5, h6, p {
 a {
   display: block;
   text-decoration: none;
-  color: black;
+  color: $black;
 }
 
 .title {
@@ -42,15 +43,15 @@ a {
 
 .button {
   border: none;
-  color: white;
+  color: $white;
   font-size: 20px;
-  background: rgb(242, 209, 48);
+  background: $button-color;
   margin-top: 20px;
   padding: 10px;
   border-radius: 5px;
 
   &:hover {
-    background: rgb(255, 219, 48);
+    background: $button-color-hover;
     cursor: pointer;
   }
 }
@@ -59,7 +60,7 @@ a {
   background-color: $red;
 
   &:hover {
-    background-color: rgb(255, 43, 43);
+    background-color: $red-hover;
   }
 }
 
@@ -72,8 +73,8 @@ a {
  */
 .form {
   margin: 50px auto 50px auto; // center
-  background: white;
-  border: 1px solid $light-grey;
+  background: $white;
+  border: 1px solid $border-color;
   border-radius: 5px;
   -webkit-box-shadow: 1px 2px 13px -5px rgba(0,0,0,0.75);
   -moz-box-shadow: 1px 2px 13px -5px rgba(0,0,0,0.75);
@@ -95,7 +96,7 @@ input[type=text] {
 }
 
 input::placeholder {
-  color: $light-grey;
+  color: $grey;
 }
 
 label {
