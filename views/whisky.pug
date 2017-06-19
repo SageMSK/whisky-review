@@ -54,16 +54,17 @@ block content
           | : #{review.finish}
 
       //- Toggling favorites
-      .review__favorite
-        p Favorite Review:
-        form.review__favoriteForm(method="POST" action=`/whisky/${review._id}/favorite`)
-          //- Turn the objId into strings.
-          - var favoriteStrings = user.favorites.map(objId => objId.toString());
-          //- Check if user has this review in their favorites list/array
-          //- If so, add the class favorited
-          - var favoriteClass = favoriteStrings.includes(review._id.toString()) ? 'favorite-button--favorited' : '';
-          button.favorite-button(type="submit" name="favorite" title="Favorite Review" class=favoriteClass)
-            i.fa.fa-heart(aria-hidden='true')
+      if user
+        .review__favorite
+          p Favorite Review:
+          form.review__favoriteForm(method="POST" action=`/whisky/${review._id}/favorite`)
+            //- Turn the objId into strings.
+            - var favoriteStrings = user.favorites.map(objId => objId.toString());
+            //- Check if user has this review in their favorites list/array
+            //- If so, add the class favorited
+            - var favoriteClass = favoriteStrings.includes(review._id.toString()) ? 'favorite-button--favorited' : '';
+            button.favorite-button(type="submit" name="favorite" title="Favorite Review" class=favoriteClass)
+              i.fa.fa-heart(aria-hidden='true')
 
     .review__comment-section
       h2 Share your thoughts here
