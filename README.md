@@ -12,4 +12,4 @@ Hosted on heroku: [https://whiskypark.herokuapp.com/](https://whiskypark.herokua
 - ~~responsive design for mobile/tablet~~
 
 Preview of Main Page
-![whiskypark](http://i.imgur.com/51bJKXG.png)
+![whiskypark](http://i.imgur.com/Kp2hEGB.png)
